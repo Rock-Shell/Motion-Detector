@@ -27,7 +27,7 @@ while True:
     td=cv2.threshold(delta_frame,30,255,cv2.THRESH_BINARY)[1]
     td=cv2.dilate(td,None,iterations=2)#smoothens the white area
 
-    (cnts,_)=cv2.findContours(td.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)# KYA BAKCHODI HAI
+    (cnts,_)=cv2.findContours(td.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in cnts:
         if cv2.contourArea(contour)<1000:
